@@ -28,7 +28,19 @@ This task involved using a wifi router to initiate a wireless connection and the
 
 Opened up the file in Wireshark and applied the filter “eapol” to locate handshake packets. Identified the BSSID of the access point (via Transmitter/BSSID field).
 
-> ![Capture](/images/capture.png)
+> ![Capture](/images/capture1.png)
+
+Used the command “sudo aircrack-ng -w /usr/share/wordlists/rockyou.txt -b 00:14:6c:7e:40:80 /home/francis1/pictures/wpa.full.cap”. Where 00:14:6c:7e:40:80 is the MAC address/BSSID of the router/device.
+
+> ![Capture](/images/progress1.png)
+
+Aircrack-ng ran the brute-force attack using the provided dictionary. (in progress)
+
+> ![Capture](/images/progress2.png)
+
+Password was found: 444445555.
+
+> ![Capture](/images/found.png)
 
 ---
 
@@ -64,4 +76,4 @@ This exercise was conducted in a fully controlled **lab environment** using publ
 
 ---
 
-Let me know if you'd like this exported to a PDF or Markdown file for GitHub upload.
+Date: 25/05/2025
