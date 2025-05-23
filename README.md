@@ -24,24 +24,11 @@ To ethically demonstrate a **WPA2 WiFi password crack** using a publicly availab
 
 ## 🔍 Process and Steps
 
-### ✅ Step 1: Analyzing the `.cap` File
+This task involved using a wifi router to initiate a wireless connection and then capturing the traffic and WPA2 handshake using Wireshark. I didn’t have a physical router, so I “simulated” by going to Aircrack-ng’s official website and downloading a .cap file that had captured a WPA2 handshake (wpa.full.cap).
 
-* The capture file contains a **WPA2 handshake** from a simulated access point.
-* Opened the file in **Wireshark** and applied the filter `eapol` to locate handshake packets.
-* Identified the **BSSID** of the access point (via Transmitter/BSSID field).
+Opened up the file in Wireshark and applied the filter “eapol” to locate handshake packets. Identified the BSSID of the access point (via Transmitter/BSSID field).
 
-### ✅ Step 2: Cracking the Password with Aircrack-ng
-
-```bash
-sudo aircrack-ng -w /usr/share/wordlists/rockyou.txt -b [BSSID] wpa.full.cap
-```
-
-* Replaced `[BSSID]` with the value obtained from Wireshark.
-* Aircrack-ng ran the brute-force attack using the provided dictionary.
-* **Success:** Password was found — `444445555`.
-
-> 🖼️ See Screenshot:
-> ![Aircrack-ng Result](./Screenshot_2025-05-23_15_18_59.png)
+> ![Capture](/images/capture.png)
 
 ---
 
